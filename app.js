@@ -59,7 +59,7 @@ clientLogins.create(form,function(err,data){
             console.log(JSON.stringify(data))
             console.log(data.length)
             if(data.length == 0)
-            //return res.json({"isVerified":false})
+            //return res.json({"isVerified":false})//
             return res.json(data)
     })
     })

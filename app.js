@@ -50,6 +50,20 @@ clientLogins.create(form,function(err,data){
             })
         })
 
+  app.get("/getpro", function (req, res) {
+        console.log(req.query)
+        clientLogins.find({"Username":req.query.username}, function (err, data) {
+            if (err)
+                throw err;
+            
+            console.log(JSON.stringify(data))
+            console.log(data.length)
+            if(data.length == 0)
+            return res.json({"isVerified":false})
+            return res.json(data)
+    })
+    })
+
         app.get("/getvehicle", function (req, res) {
             console.log(req.query)
             clientLogins.find({'Role':req.query.Role, 'available':req.query.available}, function (err, data) {

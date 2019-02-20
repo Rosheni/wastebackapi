@@ -52,7 +52,7 @@ clientLogins.create(form,function(err,data){
 
   app.get("/getpro", function (req, res) {
         console.log(req.query)
-        clientLogins.find({"Username":req.query.username}, function (err, data) {
+        clientLogins.find({"Email":"apparao@gmail.com"}, function (err, data) {
             if (err)
                 throw err;
             
